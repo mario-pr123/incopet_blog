@@ -62,7 +62,7 @@ export default function Topbar() {
             </ul>
           </li>
           <li>
-              <a className="topbarLink" href="http://www.incopet.com/">Regresar Página Principal</a>
+              <a className="topbarLink" href="https://incopet-blog.vercel.app/">Regresar Página Principal</a>
           </li>
         </ul>
         <label
