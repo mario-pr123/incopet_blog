@@ -95,7 +95,7 @@ export const getSimilarPost = async (categorias, slug) => {
                 where: {slug_not: $slug, AND: {categorias_some:{slug_in: $categorias}}}
                 last: 3
                 ){
-                    titulo
+                    tituloResumido
                     imagen {
                         url
                     }
