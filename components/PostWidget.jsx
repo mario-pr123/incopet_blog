@@ -23,7 +23,7 @@ const PostWidget = ({ categorias, slug }) => {
             <Link href={`/post/${post.slug}`}>
               <img
                 src={post.imagen.url}
-                alt={post.titulo}
+                alt={post.tituloResumido}
                 width="90px"
                 className="align-middle rounded-md trasition duration-300 ease-in-out hover:scale-105 cursor-pointer"
               />
@@ -35,7 +35,7 @@ const PostWidget = ({ categorias, slug }) => {
             </p>
             <Link href={`/post/${post.slug}`}>
               <h4 className="text-sm text-justify cursor-pointer transition duration-300 ease-in-out hover:text-blue-600">
-                {post.titulo}
+                {post.tituloResumido}
               </h4>
             </Link>
           </div>
