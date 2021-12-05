@@ -35,7 +35,8 @@ const PostWidget = ({ categorias, slug }) => {
             </p>
             <Link href={`/post/${post.slug}`}>
               <h4 className="text-sm text-justify cursor-pointer transition duration-300 ease-in-out hover:text-blue-600">
-                {post.tituloResumido}
+              {slug ?
+                {post.titulo} : {post.tituloResumido} }
               </h4>
             </Link>
           </div>
