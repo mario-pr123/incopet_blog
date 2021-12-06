@@ -44,6 +44,6 @@ export async function getStaticPaths() {
     const categorias = await getCategories();
     return {
         paths: categorias.map(({ slug }) => ({ params: { slug } })),
-        fallback: true,
+        fallback: false,
     };
 }
