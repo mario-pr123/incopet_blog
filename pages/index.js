@@ -1,9 +1,16 @@
 
+import { useEffect, useState } from 'react';
 import { Layout, Posts, PostWidget, Subpage } from '../components'
 import FeaturedPosts from '../components/sections/FeaturedPosts'
 import { getPosts } from '../services'
+export default function Home() {
+  const [posts, setPosts] = useState([]);
 
-export default function Home({ posts }) {
+  useEffect(() => {
+    getPosts().then((result) => {
+      setPosts(result);
+    });
+  }, []);
   return (
     <Layout>
       <Subpage title="BLOG INCOPET" image="/img/blogIn.jpg" />
@@ -23,11 +30,4 @@ export default function Home({ posts }) {
       </div>
     </Layout>
   )
-}
-
-export async function getStaticProps() {
-  const posts = (await getPosts()) || [];
-  return {
-    props: { posts }
-  }
 }
