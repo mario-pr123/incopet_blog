@@ -1,6 +1,5 @@
 export {default as Posts } from './Posts'
 export {default as Topbar} from './Topbar'
-export {default as Categories } from './Categories'
 export {default as PostWidget } from './PostWidget'
 export {default as Layout } from './Layout'
 export {default as Subpage } from './Subpage'
