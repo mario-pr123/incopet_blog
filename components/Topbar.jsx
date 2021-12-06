@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import { getCategories } from "../services";
 
 export default function Topbar() {
   const [isScrolled, setIsScrolled] = useState(false);
