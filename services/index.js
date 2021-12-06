@@ -1,5 +1,5 @@
 import { request, gql } from 'graphql-request'
-const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
+const graphqlAPI = 'https://api-us-east-1.graphcms.com/v2/ckw3wumad06j701z1b9e11eob/master';
 
 export const getPosts = async () => {
   const query = gql`
