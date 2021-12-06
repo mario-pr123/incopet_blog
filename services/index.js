@@ -110,56 +110,6 @@ export const getSimilarPost = async (categorias, slug) => {
   return result.posts;
 };
 
-export const getCategories = async () => {
-  const query = gql`
-    query getCat{
-        categorias {
-            nombreCat
-            slug
-        }
-    }`
-
-  const result = await request(graphqlAPI, query);
-  return result.categorias;
-}
-
-export const getCatPost = async (slug) => {
-  const query = gql`
-    query getCatPost($slug: String!) {
-      postsConnection(where: {categorias_some: {slug: $slug}}) {
-        edges {
-          cursor
-          node {
-            autor {
-              bio
-              nombre
-              id
-              foto {
-                url
-              }
-            }
-            createdAt
-            slug
-            titulo
-            resumen
-            imagen {
-              url
-            }
-            categorias {
-              nombreCat
-              slug
-            }
-          }
-        }
-      }
-    }
-  `;
-
-  const result = await request(graphqlAPI, query, { slug });
-
-  return result.postsConnection.edges;
-};
-
 
 export const submitComment = async (obj) => {
   const result = await fetch('/api/comentarios', {
