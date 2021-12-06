@@ -4,10 +4,6 @@ import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { getCategories } from "../services";
 
 export default function Topbar() {
-  const [categorias, setCategorias] = useState([]);
-  useEffect(() => {
-    getCategories().then((newCategorias) => setCategorias(newCategorias));
-  }, []);
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     window.onscroll = () => {
@@ -40,26 +36,6 @@ export default function Topbar() {
             <Link href="/">
               <a className="topbarLink">Inicio</a>
             </Link>
-          </li>
-          <li>
-            <a href="#!" className="desktopItem">
-              Categorías <i className="fas fa-chevron-down"></i>
-            </a>
-            <input type="checkBox" id="showDrop" />
-            <label htmlFor="showDrop" className="mobileItem">
-              Categorías <i className="fas fa-chevron-down"></i>
-            </label>
-            <ul className="dropMenu">
-              {categorias.map((categoria) => (
-                <li key={categoria.slug}>
-                  <Link
-                    href={`/categoria/${categoria.slug}`}
-                  >
-                    <a className="topbarLink">{categoria.nombreCat}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </li>
           <li>
               <a className="topbarLink" href="https://incopet.vercel.app/">Regresar Página Principal</a>
