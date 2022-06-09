@@ -43,7 +43,7 @@ export default function Footer() {
           </a>
         </div>
         <p className="footerCopyright">
-          <small>© 2021 | Web Design MP | All Rights Reserved</small>
+          <small>© 2022 | Web Design MP | All Rights Reserved</small>
         </p>
       </div>
     </div>
